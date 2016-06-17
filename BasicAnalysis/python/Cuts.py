@@ -186,7 +186,7 @@ cutDiphotonInvmassEBEE = cms.PSet(
 )
 
 cutDiphotonInvmassEBEB = cms.PSet(
-    inputCollection = cms.vstring("photons"), "photons",
+    inputCollection = cms.vstring("photons", "photons"),
     cutString = cms.string("invMass ( photon, photon ) > 320"),
     numberRequired = cms.string(">= 1")
 )
