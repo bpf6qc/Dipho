@@ -44,11 +44,11 @@ removeCuts(basicSkimNoHoverE.cuts, [hOverE])
 
 basicSkimNoSigmaIetaIeta = copy.deepcopy(basicSkimSelection)
 basicSkimNoSigmaIetaIeta.name = cms.string("basicSelectionNoSigmaIetaIetaCuts")
-removeCuts(basicSkimNoHoverE.cuts, [looseSigmaIetaIeta])
+removeCuts(basicSkimNoSigmaIetaIeta.cuts, [looseSigmaIetaIeta])
 
 basicSkimNoChHadIso = copy.deepcopy(basicSkimSelection)
 basicSkimNoChHadIso.name = cms.string("basicSelectionNoChHadIsoCuts")
-removeCuts(basicSkimNoHoverE.cuts, [looseChargedHadronIso])
+removeCuts(basicSkimNoChHadIso.cuts, [looseChargedHadronIso])
 
 basicSkimNoNeutralHadIso = copy.deepcopy(basicSkimSelection)
 basicSkimNoNeutralHadIso.name = cms.string("basicSelectionNoNeutralHadIsoCuts")

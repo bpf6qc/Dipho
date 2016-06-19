@@ -35,7 +35,8 @@ process.source = cms.Source ("PoolSource",
     #bypassVersionCheck = cms.untracked.bool (True),
     skipBadFiles = cms.untracked.bool (True),
     fileNames = cms.untracked.vstring (
-        "root://cmsxrootd-site2.fnal.gov:1092//store/data/Run2015D/DoubleEG/MINIAOD/16Dec2015-v2/00000/FED54E49-83A6-E511-AB65-0CC47A4C8ED8.root",
+        "root://cmsxrootd-site2.fnal.gov:1093//store/data/Run2016B/DoubleEG/MINIAOD/PromptReco-v2/000/273/448/00000/84489736-701C-E611-8EA2-02163E0145E5.root",
+        #"root://cmsxrootd-site2.fnal.gov:1092//store/data/Run2015D/DoubleEG/MINIAOD/16Dec2015-v2/00000/FED54E49-83A6-E511-AB65-0CC47A4C8ED8.root",
         #"root://xrootd.rcac.purdue.edu//store/user/wulsin/SingleMuon/Run2015D-16Dec2015-v1-DisappTrks-v1/160131_105005/0000/miniAODWithCandidateTracks_1.root",
     ),
 )
