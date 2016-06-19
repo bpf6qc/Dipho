@@ -17,6 +17,7 @@ basicSkimSelection = cms.PSet(
         looseChargedHadronIso,
         looseNeutralHadronIso,
         loosePhotonIso,
+        conversionSafeElectronVeto,
         #cutDiphotonInvmassSkim
     )
 )
@@ -56,6 +57,10 @@ removeCuts(basicSkimNoNeutralHadIso.cuts, [looseNeutralHadronIso])
 basicSkimNoPhotonIso = copy.deepcopy(basicSkimSelection)
 basicSkimNoPhotonIso.name = cms.string("basicSelectionNoPhotonIsoCuts")
 removeCuts(basicSkimNoPhotonIso.cuts, [loosePhotonIso])
+
+basicSkimNoVeto = copy.deepcopy(basicSkimSelection)
+basicSkimNoVeto.name = cms.string("basicSelectionNoVet")
+removeCuts(basicSkimNoVeto.cuts, [conversionSafeElectronVeto])
 
 basicSkimNoIso = copy.deepcopy(basicSkimSelection)
 basicSkimNoIso.name = cms.string("basicSelectionNoIsoCuts")

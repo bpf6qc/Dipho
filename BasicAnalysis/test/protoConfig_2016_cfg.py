@@ -108,6 +108,7 @@ Nminus1Channels = [
     basicSkimNoNeutralHadIso,
     basicSkimNoPhotonIso,
     basicSkimNoIso,
+    basicSkimNoVeto,
 ]
 
 MainSkimChannels = SkimChannels + Nminus1Channels
@@ -128,7 +129,7 @@ phist = cms.VPSet(histograms, EventVariableHistograms, MetHistograms, invMassHis
 ################################################################################
 
 #add_channels(process, SkimChannels, phist, weights, [], collectionMap, variableProducers, True)
-add_channels(process, MainSkimChannels, phis, weights, [], collectionMap, variableProducers, True)
+add_channels(process, MainSkimChannels, phist, weights, [], collectionMap, variableProducers, True)
 
 ################################################################################
 ##### Debugging options
