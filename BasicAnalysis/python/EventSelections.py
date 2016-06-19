@@ -21,6 +21,55 @@ basicSkimSelection = cms.PSet(
     )
 )
 
+eleVetoSkimSelection = copy.deepcopy(basicSkimSelection)
+eleVetoSkimSelection.name = cms.string("eleVetoSkimSelection")
+addCuts(eleVetoSkimSelection.cuts, [conversionSafeElectronVeto])
+
+###########################
+# N-1 skims
+###########################
+
+basicSkimNoPt = copy.deepcopy(basicSkimSelection)
+basicSkimNoPt.name = cms.string("basicSelectionNoPtCuts")
+removeCuts(basicSkimNoPt.cuts, [cutPhotonPt75])
+
+basicSkimNoEta = copy.deepcopy(basicSkimSelection)
+basicSkimNoEta.name = cms.string("basicSelectionNoEtaCuts")
+removeCuts(basicSkimNoEta.cuts, [cutPhotonEta])
+
+basicSkimNoHoverE = copy.deepcopy(basicSkimSelection)
+basicSkimNoHoverE.name = cms.string("basicSelectionNoHoverECuts")
+removeCuts(basicSkimNoHoverE.cuts, [hOverE])
+
+basicSkimNoSigmaIetaIeta = copy.deepcopy(basicSkimSelection)
+basicSkimNoSigmaIetaIeta.name = cms.string("basicSelectionNoSigmaIetaIetaCuts")
+removeCuts(basicSkimNoHoverE.cuts, [looseSigmaIetaIeta])
+
+basicSkimNoChHadIso = copy.deepcopy(basicSkimSelection)
+basicSkimNoChHadIso.name = cms.string("basicSelectionNoChHadIsoCuts")
+removeCuts(basicSkimNoHoverE.cuts, [looseChargedHadronIso])
+
+basicSkimNoNeutralHadIso = copy.deepcopy(basicSkimSelection)
+basicSkimNoNeutralHadIso.name = cms.string("basicSelectionNoNeutralHadIsoCuts")
+removeCuts(basicSkimNoNeutralHadIso.cuts, [looseNeutralHadronIso])
+
+basicSkimNoPhotonIso = copy.deepcopy(basicSkimSelection)
+basicSkimNoPhotonIso.name = cms.string("basicSelectionNoPhotonIsoCuts")
+removeCuts(basicSkimNoPhotonIso.cuts, [loosePhotonIso])
+
+basicSkimNoIso = copy.deepcopy(basicSkimSelection)
+basicSkimNoIso.name = cms.string("basicSelectionNoIsoCuts")
+isoCutsToRemove = [
+    looseChargedHadronIso,
+    looseNeutralHadronIso,
+    loosePhotonIso,
+]
+removeCuts(basicSkimNoIso.cuts, isoCutsToRemove)
+
+###########################
+# Specific eta channels
+###########################
+
 ebeeSkimSelection = copy.deepcopy(basicSkimSelection)
 ebeeSkimSelection.name = cms.string("ebeeSkimSelection")
 ebeeCuts = [

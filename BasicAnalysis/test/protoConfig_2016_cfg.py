@@ -86,7 +86,7 @@ weights = cms.VPSet ()
 variableProducers = []
 #variableProducers.append("LifetimeWeightProducer")
 #variableProducers.append("PrimaryVtxVarProducer")
-#variableProducers.append("EventJetVarProducer")
+variableProducers.append("EventJetVarProducer")
 
 ################################################################################
 ##### Import the channels to be run ############################################
@@ -94,12 +94,30 @@ variableProducers = []
 
 from Dipho.BasicAnalysis.EventSelections import *
 
+SkimChannels = [
+    basicSkimSelection,
+    #eleVetoSkimSelection,
+]
+
+Nminus1Channels = [
+    basicSkimNoPt,
+    basicSkimNoEta,
+    basicSkimNoHoverE,
+    basicSkimNoSigmaIetaIeta,
+    basicSkimNoChHadIso,
+    basicSkimNoNeutralHadIso,
+    basicSkimNoPhotonIso,
+    basicSkimNoIso,
+]
+
+MainSkimChannels = SkimChannels + Nminus1Channels
+
 ################################################################################
 ##### Import the histograms to be plotted ######################################
 ################################################################################
 
 from Dipho.BasicAnalysis.histogramDefinitions import *
-phist = cms.VPSet(histograms, invMassHistograms)
+phist = cms.VPSet(histograms, EventVariableHistograms, MetHistograms, invMassHistograms)
 
 ################################################################################
 ##### Sets of channels to be run simultaneously over a single skim. ############
@@ -109,7 +127,8 @@ phist = cms.VPSet(histograms, invMassHistograms)
 ##### Attach the channels and histograms to the process ########################
 ################################################################################
 
-add_channels(process, [basicSkimSelection], phist, weights, [], collectionMap, variableProducers, True)
+#add_channels(process, SkimChannels, phist, weights, [], collectionMap, variableProducers, True)
+add_channels(process, MainSkimChannels, phis, weights, [], collectionMap, variableProducers, True)
 
 ################################################################################
 ##### Debugging options
