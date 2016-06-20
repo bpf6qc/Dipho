@@ -101,12 +101,12 @@ SkimChannels = [
 ]
 
 MassChannels = [
-    onMassSelection_pm10,
-    offMassSelection_pm10,
-    onMassSelection_pm25,
-    offMassSelection_pm25,
-    onMassSelection_pm50,
-    offMassSelection_pm50,
+    onMassSelectionPM10,
+    offMassSelectionPM10,
+    onMassSelectionPM25,
+    offMassSelectionPM25,
+    onMassSelectionPM50,
+    offMassSelectionPM50,
 ]
 
 Nminus1Channels = [
