@@ -100,6 +100,15 @@ SkimChannels = [
     #eleVetoSkimSelection,
 ]
 
+MassChannels = [
+    onMassSelection_pm10,
+    offMassSelection_pm10,
+    onMassSelection_pm25,
+    offMassSelection_pm25,
+    onMassSelection_pm50,
+    offMassSelection_pm50,
+]
+
 Nminus1Channels = [
     basicSkimNoPt,
     basicSkimNoEta,
@@ -131,6 +140,7 @@ phist = cms.VPSet(histograms, EventVariableHistograms, MetHistograms, invMassHis
 
 #add_channels(process, SkimChannels, phist, weights, [], collectionMap, variableProducers, True)
 add_channels(process, MainSkimChannels, phist, weights, [], collectionMap, variableProducers, True)
+#add_channels(process, MassChannels, phist, weights, [], collectionMap, variableProducers, True)
 
 ################################################################################
 ##### Debugging options

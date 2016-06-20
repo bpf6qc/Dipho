@@ -4,6 +4,42 @@ from OSUT3Analysis.Configuration.cutUtilities import *
 
 # https://twiki.cern.ch/twiki/bin/view/CMS/CutBasedPhotonIdentificationRun2#SPRING15_selections_25_ns
 
+massOn750pm10 = cms.PSet(
+    inputCollection = cms.vstring("photons", "photons"),
+    cutString = cms.string("invMass ( photon, photon ) > 740 && invMass ( photon, photon ) < 760"),
+    numberRequired = cms.string(">= 1")
+)
+
+massOn750pm25 = cms.PSet(
+    inputCollection = cms.vstring("photons", "photons"),
+    cutString = cms.string("invMass ( photon, photon ) > 725 && invMass ( photon, photon ) < 775"),
+    numberRequired = cms.string(">= 1")
+)
+
+massOn750pm50 = cms.PSet(
+    inputCollection = cms.vstring("photons", "photons"),
+    cutString = cms.string("invMass ( photon, photon ) > 700 && invMass ( photon, photon ) < 800"),
+    numberRequired = cms.string(">= 1")
+)
+
+massOff750pm10 = cms.PSet(
+    inputCollection = cms.vstring("photons", "photons"),
+    cutString = cms.string("invMass ( photon, photon ) <= 740 || invMass ( photon, photon ) >= 760"),
+    numberRequired = cms.string(">= 1")
+)
+
+massOff750pm25 = cms.PSet(
+    inputCollection = cms.vstring("photons", "photons"),
+    cutString = cms.string("invMass ( photon, photon ) <= 725 || invMass ( photon, photon ) >= 775"),
+    numberRequired = cms.string(">= 1")
+)
+
+massOff750pm50 = cms.PSet(
+    inputCollection = cms.vstring("photons", "photons"),
+    cutString = cms.string("invMass ( photon, photon ) <= 700 || invMass ( photon, photon ) >= 800"),
+    numberRequired = cms.string(">= 1")
+)
+
 #########
 # H/E
 #########
