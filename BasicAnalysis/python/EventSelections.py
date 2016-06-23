@@ -18,7 +18,7 @@ basicSkimSelection = cms.PSet(
         looseNeutralHadronIso,
         loosePhotonIso,
         conversionSafeElectronVeto,
-        cutDiphotonInvmassSkim,
+        #cutDiphotonInvmassSkim,
     )
 )
 
@@ -102,7 +102,7 @@ addCuts(onMassSelectionPM10.cuts, [massOn750pm10])
 
 offMassSelectionPM10 = copy.deepcopy(basicSkimSelection)
 offMassSelectionPM10.name = cms.string("offMassSelectionPM10")
-addCuts(offMassSelectionPM10.cuts, [massOff750pm10])
+addCuts(offMassSelectionPM10.cuts, [massOff750pm10, cutDiphotonInvmassSkim])
 
 onMassSelectionPM25 = copy.deepcopy(basicSkimSelection)
 onMassSelectionPM25.name = cms.string("onMassSelectionPM25")
@@ -110,7 +110,7 @@ addCuts(onMassSelectionPM25.cuts, [massOn750pm25])
 
 offMassSelectionPM25 = copy.deepcopy(basicSkimSelection)
 offMassSelectionPM25.name = cms.string("offMassSelectionPM25")
-addCuts(offMassSelectionPM25.cuts, [massOff750pm25])
+addCuts(offMassSelectionPM25.cuts, [massOff750pm25, cutDiphotonInvmassSkim])
 
 onMassSelectionPM50 = copy.deepcopy(basicSkimSelection)
 onMassSelectionPM50.name = cms.string("onMassSelectionPM50")
@@ -118,4 +118,4 @@ addCuts(onMassSelectionPM50.cuts, [massOn750pm50])
 
 offMassSelectionPM50 = copy.deepcopy(basicSkimSelection)
 offMassSelectionPM50.name = cms.string("offMassSelectionPM50")
-addCuts(offMassSelectionPM50.cuts, [massOff750pm50])
+addCuts(offMassSelectionPM50.cuts, [massOff750pm50, cutDiphotonInvmassSkim])
