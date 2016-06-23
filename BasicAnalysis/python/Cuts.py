@@ -54,7 +54,7 @@ massOff750p10 = cms.PSet(
     numberRequired = cms.string(">= 1")
 )
 
-massOff750p10 = cms.PSet(
+massOff750m10 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
     cutString = cms.string("invMass ( photon, photon ) <= 740"),
     numberRequired = cms.string(">= 1")
@@ -66,7 +66,7 @@ massOff750p25 = cms.PSet(
     numberRequired = cms.string(">= 1")
 )
 
-massOff750p25 = cms.PSet(
+massOff750m25 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
     cutString = cms.string("invMass ( photon, photon ) <= 725"),
     numberRequired = cms.string(">= 1")
@@ -78,7 +78,7 @@ massOff750p50 = cms.PSet(
     numberRequired = cms.string(">= 1")
 )
 
-massOff750p50 = cms.PSet(
+massOff750m50 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
     cutString = cms.string("invMass ( photon, photon ) <= 700"),
     numberRequired = cms.string(">= 1")
