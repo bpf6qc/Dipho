@@ -4,83 +4,39 @@ from OSUT3Analysis.Configuration.cutUtilities import *
 
 # https://twiki.cern.ch/twiki/bin/view/CMS/CutBasedPhotonIdentificationRun2#SPRING15_selections_25_ns
 
-############
-# On 750
-############
-
-massOn750p10 = cms.PSet(
+massOn750pm10 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) < 760"),
+    cutString = cms.string("fabs( invMass( photon, photon ) - 750) < 10"),
     numberRequired = cms.string(">= 1")
 )
 
-massOn750m10 = cms.PSet(
+massOn750pm25 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) > 740"),
+    cutString = cms.string("fabs( invMass( photon, photon ) - 750) < 25"),
     numberRequired = cms.string(">= 1")
 )
 
-massOn750p25 = cms.PSet(
+massOn750pm50 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) < 775"),
+    cutString = cms.string("fabs( invMass( photon, photon ) - 750) < 50"),
     numberRequired = cms.string(">= 1")
 )
 
-massOn750m25 = cms.PSet(
+massOff750pm10 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) > 725"),
+    cutString = cms.string("fabs( invMass( photon, photon ) - 750) >= 10"),
     numberRequired = cms.string(">= 1")
 )
 
-massOn750p50 = cms.PSet(
+massOff750pm25 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) < 800"),
+    cutString = cms.string("fabs( invMass( photon, photon ) - 750) >= 25"),
     numberRequired = cms.string(">= 1")
 )
 
-massOn750m50 = cms.PSet(
+massOff750pm50 = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) > 700"),
-    numberRequired = cms.string(">= 1")
-)
-
-############
-# Off 750
-############
-
-massOff750p10 = cms.PSet(
-    inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) >= 760"),
-    numberRequired = cms.string(">= 1")
-)
-
-massOff750m10 = cms.PSet(
-    inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) <= 740"),
-    numberRequired = cms.string(">= 1")
-)
-
-massOff750p25 = cms.PSet(
-    inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) >= 775"),
-    numberRequired = cms.string(">= 1")
-)
-
-massOff750m25 = cms.PSet(
-    inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) <= 725"),
-    numberRequired = cms.string(">= 1")
-)
-
-massOff750p50 = cms.PSet(
-    inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) >= 800"),
-    numberRequired = cms.string(">= 1")
-)
-
-massOff750m50 = cms.PSet(
-    inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) <= 700"),
+    cutString = cms.string("fabs( invMass( photon, photon ) - 750) >= 50"),
     numberRequired = cms.string(">= 1")
 )
 
@@ -255,7 +211,7 @@ cutPhotonEtaEEEE = cms.PSet(
 
 cutDiphotonInvmassSkim = cms.PSet(
     inputCollection = cms.vstring("photons", "photons"),
-    cutString = cms.string("invMass ( photon, photon ) > 200"),
+    cutString = cms.string("invMass ( photon, photon ) > 230"),
     numberRequired = cms.string(">= 1")
 )
 
