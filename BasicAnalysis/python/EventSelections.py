@@ -22,10 +22,6 @@ basicSkimSelection = cms.PSet(
     )
 )
 
-eleVetoSkimSelection = copy.deepcopy(basicSkimSelection)
-eleVetoSkimSelection.name = cms.string("eleVetoSkimSelection")
-addCuts(eleVetoSkimSelection.cuts, [conversionSafeElectronVeto])
-
 ###########################
 # N-1 skims
 ###########################

@@ -121,7 +121,7 @@ Nminus1Channels = [
     basicSkimNoVeto,
 ]
 
-MainSkimChannels = SkimChannels + Nminus1Channels
+AllSkimChannels = SkimChannels + Nminus1Channels + MassChannels
 
 ################################################################################
 ##### Import the histograms to be plotted ######################################
@@ -139,7 +139,7 @@ phist = cms.VPSet(histograms, EventVariableHistograms, MetHistograms, invMassHis
 ################################################################################
 
 #add_channels(process, SkimChannels, phist, weights, [], collectionMap, variableProducers, True)
-add_channels(process, MainSkimChannels, phist, weights, [], collectionMap, variableProducers, True)
+add_channels(process, AllSkimChannels, phist, weights, [], collectionMap, variableProducers, True)
 #add_channels(process, MassChannels, phist, weights, [], collectionMap, variableProducers, True)
 
 ################################################################################
